@@ -7,7 +7,7 @@ namespace HospitalWebApi.Models
 {
     public class Nurse
     {
-        public int DoctorId { get; set; }
+        public int NurseId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Password { get; set; }
