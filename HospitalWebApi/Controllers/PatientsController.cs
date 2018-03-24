@@ -17,7 +17,7 @@ namespace HospitalWebApi.Controllers
         }
 
         // GET: api/values
-        [HttpGet]
+        [HttpGet]    
         public IEnumerable<Patient> Get()
         {
             return db.Patients.Include(x => x.Ward);

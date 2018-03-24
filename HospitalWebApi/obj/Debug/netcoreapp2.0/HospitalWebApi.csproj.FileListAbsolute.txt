@@ -2,7 +2,6 @@ C:\Users\zhily\source\repos\HospitalWebApi\HospitalWebApi\bin\Debug\netcoreapp2.
 C:\Users\zhily\source\repos\HospitalWebApi\HospitalWebApi\bin\Debug\netcoreapp2.0\HospitalWebApi.runtimeconfig.json
 C:\Users\zhily\source\repos\HospitalWebApi\HospitalWebApi\bin\Debug\netcoreapp2.0\HospitalWebApi.runtimeconfig.dev.json
 C:\Users\zhily\source\repos\HospitalWebApi\HospitalWebApi\bin\Debug\netcoreapp2.0\HospitalWebApi.dll
-C:\Users\zhily\source\repos\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.0\HospitalWebApi.csprojResolveAssemblyReference.cache
 C:\Users\zhily\source\repos\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.0\HospitalWebApi.csproj.CoreCompileInputs.cache
 C:\Users\zhily\source\repos\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.0\HospitalWebApi.AssemblyInfoInputs.cache
 C:\Users\zhily\source\repos\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.0\HospitalWebApi.AssemblyInfo.cs

@@ -14,21 +14,18 @@ namespace HospitalWebApi.Controllers
         {
             db = context;
         }
-
         // GET: api/values
         [HttpGet]
         public IEnumerable<Department> Get()
         {
             return db.Departments;
         }
-
         // GET api/values/5
         [HttpGet("{id}")]
         public Department Get(int id)
         {
             return db.Departments.Where(x=>x.DepartmentId == id).FirstOrDefault();
         }
-
         // POST api/values
         [HttpPost]
         public void Post([FromBody]Department value)
@@ -36,7 +33,6 @@ namespace HospitalWebApi.Controllers
             db.Departments.Add(value);
             db.SaveChanges();
         }
-
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
