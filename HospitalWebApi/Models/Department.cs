@@ -6,6 +6,7 @@ namespace HospitalWebApi.Models
     {
         public int DepartmentId { get; set; }
         public string Name { get; set; }
-        public List<Ward> Wards { get; set; }
+        
+        public Hospital Hospital { get; set; }
     }
 }

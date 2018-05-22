@@ -20,7 +20,7 @@ namespace HospitalWebApi.Controllers
         [HttpGet]    
         public IEnumerable<Patient> Get()
         {
-            return db.Patients.Include(x => x.Ward);
+            return db.Patients.Include(x => x.Ward).Include(x => x.User);
         }
 
         // GET api/values/5
@@ -34,6 +34,7 @@ namespace HospitalWebApi.Controllers
         [HttpPost]
         public void Post([FromBody]Patient value)
         {
+            value.PatientId = 0;
             db.Patients.Add(value);
             db.SaveChanges();
         }

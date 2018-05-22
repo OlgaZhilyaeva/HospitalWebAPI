@@ -19,5 +19,6 @@ namespace HospitalWebApi.Context
         public DbSet<Sensor> Sensors { get; set; }
         public DbSet<Temperature> Temperatures { get; set; }
         public DbSet<Ward> Wards { get; set; }
+        public DbSet<HospitalUser> HospitalUsers { get; set; }
     }
 }

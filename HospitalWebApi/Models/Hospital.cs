@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace HospitalWebApi.Models
 {
@@ -11,6 +8,6 @@ namespace HospitalWebApi.Models
         public string Name { get; set; }
         public string Adress { get; set; }
         public string Documents { get; set; }
-        public List<Department> Departments { get; set; }
+        
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace HospitalWebApi.Models
 {
@@ -11,7 +8,9 @@ namespace HospitalWebApi.Models
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Documents { get; set; }
-        public string PasswordHash { get; set; }
+
+        public Sensor Sensor { get; set; }
+        public HospitalUser User { get; set; }
         public Ward Ward { get; set; }
     }
 }

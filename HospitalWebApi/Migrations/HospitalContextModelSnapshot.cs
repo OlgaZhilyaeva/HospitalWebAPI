@@ -47,17 +47,15 @@ namespace HospitalWebApi.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("Password");
-
-                    b.Property<int?>("PrescriptionId");
-
                     b.Property<string>("Surname");
+
+                    b.Property<int?>("UserHospitalUserId");
 
                     b.HasKey("DoctorId");
 
                     b.HasIndex("DepartmentId");
 
-                    b.HasIndex("PrescriptionId");
+                    b.HasIndex("UserHospitalUserId");
 
                     b.ToTable("Doctors");
                 });
@@ -76,6 +74,20 @@ namespace HospitalWebApi.Migrations
                     b.HasKey("HospitalId");
 
                     b.ToTable("Hospitals");
+                });
+
+            modelBuilder.Entity("HospitalWebApi.Models.HospitalUser", b =>
+                {
+                    b.Property<int>("HospitalUserId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Login");
+
+                    b.Property<string>("Password");
+
+                    b.HasKey("HospitalUserId");
+
+                    b.ToTable("HospitalUsers");
                 });
 
             modelBuilder.Entity("HospitalWebApi.Models.Medicine", b =>
@@ -103,13 +115,15 @@ namespace HospitalWebApi.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("Password");
-
                     b.Property<string>("Surname");
+
+                    b.Property<int?>("UserHospitalUserId");
 
                     b.HasKey("NurseId");
 
                     b.HasIndex("DepartmentId");
+
+                    b.HasIndex("UserHospitalUserId");
 
                     b.ToTable("Nurses");
                 });
@@ -123,13 +137,19 @@ namespace HospitalWebApi.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("PasswordHash");
+                    b.Property<int?>("SensorId");
 
                     b.Property<string>("Surname");
+
+                    b.Property<int?>("UserHospitalUserId");
 
                     b.Property<int?>("WardId");
 
                     b.HasKey("PatientId");
+
+                    b.HasIndex("SensorId");
+
+                    b.HasIndex("UserHospitalUserId");
 
                     b.HasIndex("WardId");
 
@@ -141,7 +161,11 @@ namespace HospitalWebApi.Migrations
                     b.Property<int>("PrescriptionId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("DoctorId");
+
                     b.Property<int>("Duration");
+
+                    b.Property<DateTime>("FinishDate");
 
                     b.Property<int?>("MedicineId");
 
@@ -151,7 +175,11 @@ namespace HospitalWebApi.Migrations
 
                     b.Property<int?>("PatientId");
 
+                    b.Property<DateTime>("StartDate");
+
                     b.HasKey("PrescriptionId");
+
+                    b.HasIndex("DoctorId");
 
                     b.HasIndex("MedicineId");
 
@@ -165,15 +193,9 @@ namespace HospitalWebApi.Migrations
                     b.Property<int>("SensorId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("PatientId");
-
-                    b.Property<int?>("TemperatureId");
+                    b.Property<string>("Name");
 
                     b.HasKey("SensorId");
-
-                    b.HasIndex("PatientId");
-
-                    b.HasIndex("TemperatureId");
 
                     b.ToTable("Sensors");
                 });
@@ -185,9 +207,17 @@ namespace HospitalWebApi.Migrations
 
                     b.Property<DateTime>("DateTime");
 
+                    b.Property<int?>("PatientId");
+
+                    b.Property<int?>("SensorId");
+
                     b.Property<decimal>("Value");
 
                     b.HasKey("TemperatureId");
+
+                    b.HasIndex("PatientId");
+
+                    b.HasIndex("SensorId");
 
                     b.ToTable("Temperatures");
                 });
@@ -210,8 +240,8 @@ namespace HospitalWebApi.Migrations
 
             modelBuilder.Entity("HospitalWebApi.Models.Department", b =>
                 {
-                    b.HasOne("HospitalWebApi.Models.Hospital")
-                        .WithMany("Departments")
+                    b.HasOne("HospitalWebApi.Models.Hospital", "Hospital")
+                        .WithMany()
                         .HasForeignKey("HospitalId");
                 });
 
@@ -221,9 +251,9 @@ namespace HospitalWebApi.Migrations
                         .WithMany()
                         .HasForeignKey("DepartmentId");
 
-                    b.HasOne("HospitalWebApi.Models.Prescription", "Prescription")
+                    b.HasOne("HospitalWebApi.Models.HospitalUser", "User")
                         .WithMany()
-                        .HasForeignKey("PrescriptionId");
+                        .HasForeignKey("UserHospitalUserId");
                 });
 
             modelBuilder.Entity("HospitalWebApi.Models.Nurse", b =>
@@ -231,10 +261,22 @@ namespace HospitalWebApi.Migrations
                     b.HasOne("HospitalWebApi.Models.Department", "Department")
                         .WithMany()
                         .HasForeignKey("DepartmentId");
+
+                    b.HasOne("HospitalWebApi.Models.HospitalUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserHospitalUserId");
                 });
 
             modelBuilder.Entity("HospitalWebApi.Models.Patient", b =>
                 {
+                    b.HasOne("HospitalWebApi.Models.Sensor", "Sensor")
+                        .WithMany()
+                        .HasForeignKey("SensorId");
+
+                    b.HasOne("HospitalWebApi.Models.HospitalUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserHospitalUserId");
+
                     b.HasOne("HospitalWebApi.Models.Ward", "Ward")
                         .WithMany()
                         .HasForeignKey("WardId");
@@ -242,6 +284,10 @@ namespace HospitalWebApi.Migrations
 
             modelBuilder.Entity("HospitalWebApi.Models.Prescription", b =>
                 {
+                    b.HasOne("HospitalWebApi.Models.Doctor", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorId");
+
                     b.HasOne("HospitalWebApi.Models.Medicine", "Medicine")
                         .WithMany()
                         .HasForeignKey("MedicineId");
@@ -251,21 +297,21 @@ namespace HospitalWebApi.Migrations
                         .HasForeignKey("PatientId");
                 });
 
-            modelBuilder.Entity("HospitalWebApi.Models.Sensor", b =>
+            modelBuilder.Entity("HospitalWebApi.Models.Temperature", b =>
                 {
                     b.HasOne("HospitalWebApi.Models.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId");
 
-                    b.HasOne("HospitalWebApi.Models.Temperature", "Temperature")
+                    b.HasOne("HospitalWebApi.Models.Sensor", "Sensor")
                         .WithMany()
-                        .HasForeignKey("TemperatureId");
+                        .HasForeignKey("SensorId");
                 });
 
             modelBuilder.Entity("HospitalWebApi.Models.Ward", b =>
                 {
                     b.HasOne("HospitalWebApi.Models.Department", "Department")
-                        .WithMany("Wards")
+                        .WithMany()
                         .HasForeignKey("DepartmentId");
                 });
 #pragma warning restore 612, 618

@@ -8,3 +8,15 @@ C:\Users\zhily\source\repos\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.
 C:\Users\zhily\source\repos\HospitalWebApi\HospitalWebApi\bin\Debug\netcoreapp2.0\HospitalWebApi.pdb
 C:\Users\zhily\source\repos\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.0\HospitalWebApi.dll
 C:\Users\zhily\source\repos\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.0\HospitalWebApi.pdb
+C:\Users\zhily\source\repos\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.0\HospitalWebApi.csprojResolveAssemblyReference.cache
+P:\Projects\Web\HospitalWebApi\HospitalWebApi\bin\Debug\netcoreapp2.0\HospitalWebApi.deps.json
+P:\Projects\Web\HospitalWebApi\HospitalWebApi\bin\Debug\netcoreapp2.0\HospitalWebApi.runtimeconfig.json
+P:\Projects\Web\HospitalWebApi\HospitalWebApi\bin\Debug\netcoreapp2.0\HospitalWebApi.runtimeconfig.dev.json
+P:\Projects\Web\HospitalWebApi\HospitalWebApi\bin\Debug\netcoreapp2.0\HospitalWebApi.dll
+P:\Projects\Web\HospitalWebApi\HospitalWebApi\bin\Debug\netcoreapp2.0\HospitalWebApi.pdb
+P:\Projects\Web\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.0\HospitalWebApi.csprojResolveAssemblyReference.cache
+P:\Projects\Web\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.0\HospitalWebApi.csproj.CoreCompileInputs.cache
+P:\Projects\Web\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.0\HospitalWebApi.AssemblyInfoInputs.cache
+P:\Projects\Web\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.0\HospitalWebApi.AssemblyInfo.cs
+P:\Projects\Web\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.0\HospitalWebApi.dll
+P:\Projects\Web\HospitalWebApi\HospitalWebApi\obj\Debug\netcoreapp2.0\HospitalWebApi.pdb
